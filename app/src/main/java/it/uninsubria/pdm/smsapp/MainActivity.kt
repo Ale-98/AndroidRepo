@@ -7,6 +7,10 @@ import android.os.Bundle
 import android.view.View
 import kotlinx.android.synthetic.main.activity_main.*
 
+/**
+ * App per invio di un SMS
+ * @author Alessandro Cadei 732700
+ */
 class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -15,12 +19,13 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun sendMessage(view: View){
-        val message = messageText.text.toString()
-        val number:String = numberField.text.toString()
+        val message:String = editTextMessage.text.toString() // Estrazione contenuto del messaggio
+        val number:String = editTextTel.text.toString() // Estrazione numero di telefono destinatario
+        val name:String = "Ciao, sono ALESSANDRO CADEI.\n"
 
         val uri:Uri = Uri.parse("smsto:$number")
         val it = Intent(Intent.ACTION_SENDTO, uri)
-        it.putExtra("sms_body", message)
+        it.putExtra("sms_body", name+message)
         startActivity(it)
     }
 
