@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">SMSApp</string>
+    <string name="button_send">INVIA</string>
+    <string name="message_send">Scrivi qui il messaggio</string>
+    <string name="phone_number">Numero di telefono destinatario</string>
+</resources>
